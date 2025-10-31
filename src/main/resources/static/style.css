@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --background-color: rgba(244, 242, 238, 1);
+
+    --header-background-color: rgba(255, 255, 255, 1);
+    --header-button-background-color: rgba(45, 93, 129, 1);
+    --header-button-background-color-hover: rgba(0, 39, 70, 1);
+    --header-button-text-color: rgba(255, 255, 255, 1);
+
+    --card-container-background-color: rgb(215, 236, 255);
+    --card-background-color: rgba(255, 255, 255, 1);
+    --card-button-background-color: rgb(215, 236, 255);
+    --card-button-background-color-hover: rgb(118, 191, 255);
+    --card-scrollbar-color: rgb(73, 141, 201);
+    --card-scrollbar-color-active: rgb(82, 115, 141);
+    --card-scrollbar-background-color: #e0e0e0;
+
+    --text-color: rgba(0, 0, 0, 1);
+    --text-color-hover: rgb(45, 93, 129);
+
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+}
+
+.app-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    background-color: var(--background-color);
+}
+
+.header-container {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem;
+
+    background-color: var(--header-background-color);
+}
+
+.header-container .header__logo {
+    max-width: 100%;
+}
+
+.header-container .header__logo a {
+    color: var(--text-color);
+
+    font-family: 'League Spartan', sans-serif;
+    text-decoration: none;
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.header-container .header__menu {
+    max-width: 100%;
+}
+
+.header-container .header__menu .header__menu-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0 12rem 0 0;
+}
+
+.header-container .header__menu .header__menu-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    border: .1rem solid transparent;
+    
+    transition: color .3s, border-bottom .3s;
+}
+
+.header-container .header__menu .header__menu-item a:hover {
+    color: var(--text-color-hover);
+    border-bottom: .1rem solid var(--text-color-hover);
+}
+
+.header-container .header__button {
+    max-width: 100%;
+}
+
+.header-container .header__login .header__login-button {
+    padding: 1rem 2rem;
+    
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    background-color: var(--header-button-background-color);
+    color: var(--text-color);
+    
+    transition: transform .25s, background-color .25s;
+}
+
+.header-container .header__login .header__login-button:hover {
+    transform: scale(1.05);
+    background-color: var(--header-button-background-color-hover);
+}
+
+.header-container .header__login .header__login-button a {
+    text-decoration: none;
+    color: var(--header-button-text-color);
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-container .hero__title {
+    font-size: 3rem;
+}
+
+.hero-container .hero__description {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.card-container {
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+    min-height: fit-content;
+    width: 90vw;
+    
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+    border-radius: 3rem;
+
+    border: .1rem solid rgba(255, 255, 255, .5);
+
+    background-color: var(--card-container-background-color);
+}
+    
+.card-container .card {
+    width: 44rem;
+    height: 44rem;
+    max-width: 44rem;
+    max-height: 44rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    padding-right: 1rem; /* Pequeno padding à direita */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+    overflow-y: auto;
+
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+
+    transition: transform .25s;
+}
+
+.card-container .card h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-container .card p {
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.card-container .card:hover {
+    transform: scale(1.05);
+}
+
+.card-container .card .card__list {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    margin-right: -1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+
+    list-style: none;
+}
+
+.card-container .card .card__list::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+
+.card-container .card .card__list::-webkit-scrollbar-track {
+    background: var(--card-scrollbar-background-color);
+    border-radius: .5rem;
+}
+
+.card-container .card .card__list::-webkit-scrollbar-thumb {
+    background-color: var(--card-scrollbar-color);
+    border-radius: .5rem;
+    border: 0.2rem solid var(--card-scrollbar-background-color);
+}
+
+.card-container .card .card__list::-webkit-scrollbar-thumb:active {
+    background-color: var(--card-scrollbar-color-active);
+}
+
+.card-container .card .card__list .card__list-item button {
+    border: none;
+    padding: 2rem 3rem;
+    border-radius: 1.5rem;
+
+    background-color: var(--card-button-background-color);
+    border: .1rem solid white;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.8rem;
+
+    transition: transform .25s, background-color .25s;
+}
+
+.card-container .card .card__list .card__list-item button:hover {
+    transform: translateY(-.5rem);
+    background-color: var(--card-button-background-color-hover);
+}
